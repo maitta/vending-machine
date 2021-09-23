@@ -1,0 +1,46 @@
+.snack {
+    display: flex;
+    flex: 50% 50%;
+}
+
+.grid-element:hover {
+    outline: 1px solid red;
+}
+
+.selected{
+    outline: 1px solid rgb(12, 110, 37);    
+}
+
+.selected img{
+    animation-name: rotate;
+    animation-duration: 2s;
+}
+
+.sold img{
+    animation-name: drop;
+    animation-duration: 2s;
+}
+
+@keyframes rotate {
+    33% { transform: rotate(-15deg); }
+    66% { transform: rotate(15deg); }
+}
+
+@keyframes drop {
+    99% { transform: translateY(600px) rotate(120deg); }
+}
+
+
+.grid-element{
+    min-width: 200px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.snack-picture{
+    min-width: 110px;
+}
+
+.snack-description{
+    margin-left: 20px;
+}

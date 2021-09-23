@@ -1,0 +1,18 @@
+.box{
+    display: flex;
+    width: 100%;
+}
+
+.left{
+    flex: 70%;
+}
+
+.right{
+    flex: 30%;
+}
+
+.grid{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}

@@ -1,0 +1,9 @@
+<div class="inline">
+    <div *ngFor="let coin of coins" >
+        <app-coin [coin]="coin"></app-coin>          
+    </div>
+</div>
+<h4>
+    Credit: $ {{vendingService.credit}}                
+</h4>     
+<button [disabled]="!vendingService.canPay()" (click)="vendingService.pay()">Pay</button>

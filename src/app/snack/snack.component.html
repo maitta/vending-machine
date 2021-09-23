@@ -1,0 +1,12 @@
+<div class="grid-element" (click)="select()" [ngClass]="{'selected': snack.selected}" >
+    <div class="snack">
+        <div class="snack-picture" [ngClass]="{'sold': snack.dropIt}">
+            <img [src]="snack.category?.getImageUrl()" [alt]="snack.category?.name" />
+        </div>
+        <div class="snack-description">
+            <div >{{snack.name}}</div>
+            <h4>{{snack.stock}}</h4>
+            <h3>{{'$' + snack.price}}</h3>
+        </div>
+    </div>
+</div>
