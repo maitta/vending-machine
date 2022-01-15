@@ -86,6 +86,7 @@ export class VendingMachineService {
     this._selectedSnack.selected = false    
     this._selectedSnack.dropIt = true
     const sel = this._selectedSnack
+    // TODO use observables, also for stock, when it reaches 0 disable the purchase
     setInterval(() => sel.dropIt = false, 7000)
   }
 

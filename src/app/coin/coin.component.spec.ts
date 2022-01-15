@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CoinComponent } from './coin.component';
+import { Coin, Quarter } from '../models/coin';
+import { VendingMachineSize as size } from '../service/vending-machine.service';
 
 describe('CoinComponent', () => {
   let component: CoinComponent;
@@ -8,7 +10,8 @@ describe('CoinComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CoinComponent ]
+      declarations: [ CoinComponent ],
+      providers: [{provide: 'size', useValue: size.medium}]
     })
     .compileComponents();
   });
@@ -16,6 +19,7 @@ describe('CoinComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(CoinComponent);
     component = fixture.componentInstance;
+    component.coin = new Quarter();
     fixture.detectChanges();
   });
 
