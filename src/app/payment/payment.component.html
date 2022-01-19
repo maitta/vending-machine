@@ -6,4 +6,6 @@
 <h4>
     Credit: $ {{vendingService.credit}}                
 </h4>     
-<button [disabled]="!vendingService.canPay()" (click)="vendingService.pay()">Pay</button>
+<button [disabled]="!vendingService.canPay() || !vendingService.hasStock()" (click)="vendingService.pay()">Pay</button>
+<span *ngIf="vendingService.isShowNoCreditMessage()">You don't currently have enough credit to purchase the selected product</span>
+<span *ngIf="vendingService.isShowNoStockMessage()">Current selection has sold out, choose another product</span>
