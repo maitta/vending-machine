@@ -43,9 +43,7 @@ export class VendingMachineService {
     const s = this._snacks.find(x => x === snack)    
     if(s) {
       s.selected = true
-      //this._selectedSnack = s
     }
-    
   }
   
   public deselect(): void {
