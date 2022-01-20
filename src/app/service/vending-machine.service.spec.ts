@@ -21,7 +21,8 @@ describe('VendingMachineService', () => {
   const selectRandomSnack = function() {
     const snack = service.snacks[random]
     service.select(snack)
-    return [snack, service.getSelected()]
+    const selection = service.getSelected()
+    return { snack, selection }
   }
 
   it('should be created', () => {
@@ -40,7 +41,7 @@ describe('VendingMachineService', () => {
   it('should allow snack selection', () => {
     let previousSel = service.getSelected()
     expect(previousSel).toBeInstanceOf(Initial)
-    const [snack, selection] = selectRandomSnack()
+    const {snack, selection} = selectRandomSnack()
     expect(selection).toBe(snack)
   })
 
@@ -58,7 +59,7 @@ describe('VendingMachineService', () => {
     service.insertCoin(new Coins.Dollar)
     service.insertCoin(new Coins.Half)
     expect(service.credit).toBe(1.50)
-    const [snack] = selectRandomSnack()
+    const {snack} = selectRandomSnack()
     const res = service.canPay()
     if(snack.price > 1.50){
       expect(res).toBe(false)
@@ -68,7 +69,7 @@ describe('VendingMachineService', () => {
   })
 
   it('should check if snack has enough stock', () => {
-    const [snack] = selectRandomSnack()
+    const {snack} = selectRandomSnack()
     expect(service.hasStock()).toBe(true)
     snack.stock = 0
     expect(service.hasStock()).toBe(false)
@@ -87,7 +88,7 @@ describe('VendingMachineService', () => {
   })
 
   it('should show the no-stock message', () => {
-    const [snack] = selectRandomSnack()
+    const {snack} = selectRandomSnack()
     snack.stock = 0
     expect(service.isShowNoStockMessage()).toBe(true)
   })
@@ -95,17 +96,17 @@ describe('VendingMachineService', () => {
   it('should handle payment correctly', () => {
     service.insertCoin(new Coins.Dollar)
     service.insertCoin(new Coins.Dollar)
-    let [snack, sel] = selectRandomSnack()
-    const currentStock = sel.stock
-    const currentCredit = service.credit
+    let {snack, selection} = selectRandomSnack()
+    const previousStock = selection.stock
+    const previousCredit = service.credit
     service.pay()
-    if(snack.price > currentCredit){
-      expect(sel.stock).toBe(currentStock)
-      expect(service.credit).toBe(currentCredit)
-      expect(service.getSelected()).toBe(sel)
+    if(snack.price > previousCredit){
+      expect(selection.stock).toBe(previousStock)
+      expect(service.credit).toBe(previousCredit)
+      expect(service.getSelected()).toBe(selection)
     }else{
-      expect(sel.stock).toBe(currentStock - 1)
-      expect(service.credit).toBe(currentCredit - 2)
+      expect(selection.stock).toBe(previousStock - 1)
+      expect(service.credit).toBe(Number((previousCredit - snack.price).toFixed(2)))
       expect(service.getSelected()).toBeInstanceOf(Initial)
     }
   })
