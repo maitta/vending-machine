@@ -111,15 +111,16 @@ export class VendingMachineService {
   }
 
   public pay(): void{
-    this._credit = this._credit - this._selectedSnack.price
-    this._selectedSnack.stock--
-    this._selectedSnack.selected = false    
-    this._selectedSnack.dropIt = true
-    const sel = this._selectedSnack
-    this._selectedSnack = new Initial()
-    // TODO use observables, also for stock, when it reaches 0 disable the purchase
-    setInterval(() => sel.dropIt = false, 7000)
+    if(this.canPay()){
+      this._credit = this._credit - this._selectedSnack.price
+      this._selectedSnack.stock--
+      this._selectedSnack.selected = false    
+      this._selectedSnack.dropIt = true
+      const sel = this._selectedSnack
+      this._selectedSnack = new Initial()
+      // TODO use observables, also for stock, when it reaches 0 disable the purchase
+      setInterval(() => sel.dropIt = false, 7000)
+    }    
   }
-
 }
 
