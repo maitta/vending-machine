@@ -14,9 +14,9 @@ describe('VendingMachineService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [{provide: 'size', useValue: size}]
-    });
+    })
     service = TestBed.inject(VendingMachineService)
-  });
+  })
 
   const selectRandomSnack = function() {
     const snack = service.snacks[random]
@@ -27,14 +27,14 @@ describe('VendingMachineService', () => {
 
   it('should be created', () => {
     expect(service).toBeTruthy()
-  });
+  })
 
   it('should provide the right amount of snacks', () => {
     expect(service.snacks.length).toBe(size)
   })
 
   it('should accept coins', () => {
-    expect(service.acceptedCoins.length).toBeGreaterThan(0);
+    expect(service.acceptedCoins.length).toBeGreaterThan(0)
     expect(service.acceptedCoins.every(x => x instanceof Coins.Coin)).toBeTruthy
   })
 

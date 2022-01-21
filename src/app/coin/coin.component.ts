@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Coin } from '../models/coin';
-import { VendingMachineService } from '../service/vending-machine.service';
+import { Component, Input, OnInit } from '@angular/core'
+import { Coin } from '../models/coin'
+import { VendingMachineService } from '../service/vending-machine.service'
 
 @Component({
   selector: 'app-coin',
@@ -9,7 +9,7 @@ import { VendingMachineService } from '../service/vending-machine.service';
 })
 export class CoinComponent implements OnInit {
 
-  @Input() coin!: Coin;
+  @Input() coin!: Coin
 
   constructor(public vendingService: VendingMachineService) { }
 

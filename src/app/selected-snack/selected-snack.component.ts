@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { VendingMachineService } from '../service/vending-machine.service';
+import { Component, OnInit } from '@angular/core'
+import { VendingMachineService } from '../service/vending-machine.service'
 
 @Component({
   selector: 'app-selected-snack',

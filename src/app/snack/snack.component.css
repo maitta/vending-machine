@@ -8,7 +8,7 @@
 }
 
 .selected{
-    outline: 1px solid rgb(12, 110, 37);    
+    outline: 1px solid rgb(12, 110, 37);
 }
 
 .selected img{
@@ -22,17 +22,17 @@
 }
 
 @keyframes rotate {
-    33% { transform: rotate(-15deg); }
-    66% { transform: rotate(15deg); }
+    33% { transform: rotate(-15deg) }
+    66% { transform: rotate(15deg) }
 }
 
 @keyframes drop {
-    99% { transform: translateY(600px) rotate(120deg); }
+    99% { transform: translateY(600px) rotate(120deg) }
 }
 
 
 .grid-element{
-    min-width: 200px;
+    min-width: 220px;
     padding: 15px;
     cursor: pointer;
 }

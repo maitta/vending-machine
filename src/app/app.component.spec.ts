@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
-import { AppComponent } from './app.component';
-import { VendingMachineSize as size } from './service/vending-machine.service';
+import { TestBed } from '@angular/core/testing'
+import { AppComponent } from './app.component'
+import { VendingMachineSize as size } from './service/vending-machine.service'
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -9,25 +9,25 @@ describe('AppComponent', () => {
         AppComponent
       ],
       providers: [{provide: 'size', useValue: size.medium}]
-    }).compileComponents();
-  });
+    }).compileComponents()
+  })
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
+    const fixture = TestBed.createComponent(AppComponent)
+    const app = fixture.componentInstance
+    expect(app).toBeTruthy()
+  })
 
   it(`should have as title 'Vending Machine'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('Vending Machine');
-  });
+    const fixture = TestBed.createComponent(AppComponent)
+    const app = fixture.componentInstance
+    expect(app.title).toEqual('Vending Machine')
+  })
 
   it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Vending machine simulation');
-  });
-});
+    const fixture = TestBed.createComponent(AppComponent)
+    fixture.detectChanges()
+    const compiled = fixture.nativeElement as HTMLElement
+    expect(compiled.querySelector('h1')?.textContent).toContain('Vending machine simulation')
+  })
+})

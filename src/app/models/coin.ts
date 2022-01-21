@@ -1,5 +1,5 @@
 export abstract class Coin{
-    //value: number /not needed when using the access modifier in the constructor
+    //value: number // this is not needed when using the access modifier in the constructor
     constructor(public Value: number){
         this.Value = Value
     }

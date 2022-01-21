@@ -11,7 +11,7 @@ describe('CoinComponent', () => {
   let coin = new Quarter()
 
   beforeEach(async () => {
-    const spy = jasmine.createSpyObj('VendingMachineService', ['insertCoin'])
+    const spy = jasmine.createSpyObj('VendingMachineService', ['insertCoin'])    
     await TestBed.configureTestingModule({
       declarations: [ CoinComponent ],
       providers: [CoinComponent, {provide: 'size', useValue: size.medium}, { provide: VendingMachineService, useValue: spy }]

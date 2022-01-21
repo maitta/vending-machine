@@ -2,7 +2,7 @@ import * as snacks from "./snack"
 
 // function outside of a class needs to declare the function keyword
 export default function getSnack(): snacks.Snack{
-    let random = Math.floor(Math.random() * 11);
+    let random = Math.floor(Math.random() * 11)
     switch(random) {
         case 0: return new snacks.CocaCola()
         case 1: return new snacks.Fanta()
@@ -16,5 +16,5 @@ export default function getSnack(): snacks.Snack{
         case 9: return new snacks.Hersey()
         case 10: return new snacks.MilkyWay()            
     }
-    throw new Error('Snack is not in stock');
+    throw new Error('Snack is not in stock')
 }

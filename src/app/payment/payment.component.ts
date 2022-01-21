@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 
-import { Coin } from '../models/coin';
-import { VendingMachineService } from '../service/vending-machine.service';
+import { Coin } from '../models/coin'
+import { VendingMachineService } from '../service/vending-machine.service'
 
 @Component({
   selector: 'app-payment',

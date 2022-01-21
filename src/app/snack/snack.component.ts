@@ -1,7 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core'
 
-import { Snack } from '../models/snack';
-import { VendingMachineService } from '../service/vending-machine.service';
+import { Snack } from '../models/snack'
+import { VendingMachineService } from '../service/vending-machine.service'
 
 @Component({
   selector: 'app-snack',
@@ -10,7 +10,7 @@ import { VendingMachineService } from '../service/vending-machine.service';
 })
 export class SnackComponent implements OnInit {
 
-  @Input() snack!: Snack;
+  @Input() snack!: Snack
 
   constructor(public vendingService: VendingMachineService) { }
 

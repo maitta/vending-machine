@@ -35,7 +35,7 @@ export class VendingMachineService {
   }
 
   public get acceptedCoins(): Coins.Coin[]{
-    return this._acceptedCoins;
+    return this._acceptedCoins
   }
 
   public select(snack: Snack): void {

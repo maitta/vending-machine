@@ -1,7 +1,7 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core'
 
-import { Snack } from './models/snack';
-import { VendingMachineService } from './service/vending-machine.service';
+import { Snack } from './models/snack'
+import { VendingMachineService } from './service/vending-machine.service'
 
 @Component({
   selector: 'app-root',
