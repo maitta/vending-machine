@@ -20,5 +20,4 @@ export class CoinComponent implements OnInit {
     console.log(this.coin)
     this.vendingService.insertCoin(this.coin)
   }
-
 }
