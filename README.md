@@ -1,11 +1,6 @@
-BUGs and known issues
-x. after selecting an item and paying for it, current selection does not really clear. After adding more credit same item can be again bought without being visibly selected.
-x. after finishing stock sales are still permitted and negative stock shows up.
-3. un mogollo de codi comentat, que pasa ahi?
-
 # VendingMachine
 
-Angular port of TS project by Roland Guijt @Pluralsight.
+Angular port of TS project by Roland Guijt @Pluralsight. Over 40 unit tests were also added with about 90% coverage.
 
 This project is a simple vending machine simulation where the user is presented with a layout of different products, different coins and a pay button. Just as with the real thing, introduce credit, pick your item, pay and receive the goods.
 
